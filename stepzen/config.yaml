@@ -1,0 +1,17 @@
+ruleset:
+  - query: |
+      query MyQuery ($username: String) {
+        devto_getArticles(username: $username, per_page: 3, page: 1) {
+          title
+          canonical_url
+          user {
+            name
+            twitter_username
+            username
+            website_url
+          }
+        }
+      }
+    rules:
+      - predicate: true
+        action: allow
